@@ -1,8 +1,8 @@
-server:
-  port: 8081
-
 spring:
   application:
     name: car-service
-
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8083
 
