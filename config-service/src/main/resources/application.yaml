@@ -8,5 +8,5 @@ spring:
       server:
         git:
           default-label: config-server
-          uri: https://github.com/Jovas312/microservice-tutorial/tree/master
+          uri: https://github.com/Jovas312/microservice-tutorial
           search-paths: config-data
