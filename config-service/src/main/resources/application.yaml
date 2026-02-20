@@ -7,6 +7,6 @@ spring:
     config:
       server:
         git:
-          default-label: multiple-instances
+          default-label: gateway
           uri: https://github.com/Jovas312/microservice-tutorial
           search-paths: config-data
