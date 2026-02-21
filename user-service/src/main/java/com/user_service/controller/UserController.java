@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/user")
@@ -92,7 +93,7 @@ public class UserController {
         return new ResponseEntity("El usuario:" + userId + "tiene los carros en el taller", HttpStatus.OK);
     }
 
-    private ResponseEntity<List<Car>> fallBackSaveCar(@PathVariable Integer userId, @RequestBody Car car, RuntimeException exception){
+    private ResponseEntity<Car> fallBackSaveCar(@PathVariable Integer userId, @RequestBody Car car, RuntimeException exception){
         return new ResponseEntity("El usuario:" + userId + "no tiene dinero para los carros", HttpStatus.OK);
     }
 
@@ -100,11 +101,11 @@ public class UserController {
         return new ResponseEntity("El usuario:" + userId + "tiene las motos en el taller", HttpStatus.OK);
     }
 
-    private ResponseEntity<List<Motorbike>> fallBackSaveMotorbike(@PathVariable Integer userId, @RequestBody Motorbike motorbike, RuntimeException exception){
+    private ResponseEntity<Motorbike> fallBackSaveMotorbike(@PathVariable Integer userId, @RequestBody Motorbike motorbike, RuntimeException exception){
         return new ResponseEntity("El usuario:" + userId + "no tiene dinero para las motos", HttpStatus.OK);
     }
 
-    private ResponseEntity<List<Car>> fallBackGetAll(@PathVariable Integer userId, RuntimeException exception){
+    private ResponseEntity<Map<String, Object>> fallBackGetAll(@PathVariable Integer userId, RuntimeException exception){
         return new ResponseEntity("El usuario:" + userId + "tiene los veiculos en el taller", HttpStatus.OK);
     }
 
